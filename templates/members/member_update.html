@@ -1,0 +1,15 @@
+{% extends 'starter-page.html' %}
+{% load static %}
+{% block body %}
+
+<h2 style="text-align: center; margin-bottom: 20px;">Update Member</h2>
+
+<form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+</form>
+<a href="{% url 'member_detail' form.instance.pk %}">Back to Member Details</a>
+
+
+{% endblock %}

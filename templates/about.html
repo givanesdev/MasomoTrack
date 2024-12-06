@@ -1,0 +1,36 @@
+{% extends 'starter-page.html' %}
+{% load static %}
+
+{% block body %}
+
+ <div class="container mt-5">
+    <h1 class="text-center">About Us</h1>
+    <p class="mt-4 text-center">
+        MasomoTrack is an innovative platform designed to help students, teachers, and parents monitor academic performance
+        and streamline payments for school-related activities. Our mission is to make learning efficient, transparent, and personalized.
+    </p>
+
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <h4>Our Vision</h4>
+            <p>
+                To create a future where education is accessible, personalized, and efficient, empowering every learner
+                to achieve their full potential.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <h4>Our Mission</h4>
+            <p>
+                To develop tools that enhance collaboration between educators, learners, and parents while simplifying
+                the process of tracking academic progress and managing payments.
+            </p>
+        </div>
+    </div>
+
+    <div class="text-center mt-5">
+        <img src="{% static 'assets/img/about-image.jpg' %}" alt="About Us" class="img-fluid rounded">
+    </div>
+</div>
+
+
+{% endblock  %}

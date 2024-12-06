@@ -1,0 +1,24 @@
+{% extends 'starter-page.html' %}
+
+{% block body %}
+  <h1>Dashboard</h1>
+
+  <div class="dashboard-summary">
+    <h2>Summary</h2>
+    <ul>
+      <li><strong>Total Courses:</strong> {{ total_courses }}</li>
+      <li><strong>Total Students:</strong> {{ total_students }}</li>
+      <li><strong>Average Performance:</strong> {{ average_performance|default:"N/A" }}</li>
+      <li><strong>Total Performance Records:</strong> {{ total_performances }}</li>
+    </ul>
+  </div>
+
+  <div class="dashboard-actions">
+    <h2>Actions</h2>
+    <ul>
+      <li><a href="{% url 'course_list' %}">View Courses</a></li>
+      <li><a href="{% url 'student_list' %}">View Students</a></li>
+      <li><a href="{% url 'performance_list' %}">View Performance Records</a></li>
+    </ul>
+  </div>
+{% endblock %}

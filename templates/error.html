@@ -1,0 +1,16 @@
+{% extends 'starter-page.html' %}
+{% load static %}
+{% block body %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+</head>
+<body>
+    <h1>Error</h1>
+    <p>{{ message }}</p>
+    <a href="{% url 'index' %}">Go Back to Home</a> <!-- Adjust 'home' if necessary -->
+</body>
+
+
+{% endblock %}

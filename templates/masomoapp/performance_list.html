@@ -1,0 +1,39 @@
+{% extends 'starter-page.html' %}
+{% load static %}
+{% block body %}
+<div class="container mt-5">
+    <h2 class="text-center">Performance Records</h2>
+    <a href="{% url 'performance_create' %}" class="btn btn-primary mb-3">Add New Performance Record</a>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Student</th>
+                <th>Course</th>
+                <th>Grade</th>
+                <th>Score</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for performance in performances %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ performance.student }}</td>
+                <td>{{ performance.course }}</td>
+                <td>{{ performance.grade }}</td>
+                <td>{{ performance.score }}</td>
+                <td>
+                    <a href="{% url 'performance_update' performance.id %}" class="btn btn-warning btn-sm">Edit</a>
+                    <form action="{% url 'performance_delete' performance.id %}" method="post" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

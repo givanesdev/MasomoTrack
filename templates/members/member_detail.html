@@ -1,0 +1,19 @@
+{% extends 'starter-page.html' %}
+{% load static %}
+
+{% block body %}
+ <div style="max-width: 600px; margin: 0 auto; background-color: #f9f9f9; padding: 20px; border-radius: 8px;">
+    <h2 style="text-align: center;">{{ member.first_name }} {{ member.last_name }}</h2>
+    <p style="font-size: 18px; margin-bottom: 10px;"><strong>Email:</strong> {{ member.email }}</p>
+    <p style="font-size: 18px; margin-bottom: 10px;"><strong>Phone:</strong> {{ member.phone }}</p>
+    <p style="font-size: 18px; margin-bottom: 20px;"><strong>Role:</strong> {{ member.role }}</p>
+
+
+
+
+    <a href="{% url 'member_update' member.pk %}" style="display: block; text-align: center; font-size: 18px; color: #007bff; text-decoration: none;">Edit Member</a>
+    <a href="{% url 'member_list' %}" style="display: block; text-align: center; font-size: 18px; color: #007bff; text-decoration: none;">Back to Member List</a>
+    <a href="{% url 'member_delete' member.pk %}" style="display: block; text-align: center; font-size: 18px; color: #ff004d; text-decoration: none;">Delete</a>
+
+  </div>
+{% endblock %}
